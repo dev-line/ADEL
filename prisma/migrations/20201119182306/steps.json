@@ -1,0 +1,22 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteField",
+      "model": "Products",
+      "field": "commands"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Commands",
+      "field": "Products",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Commands",
+      "field": "products"
+    }
+  ]
+}
