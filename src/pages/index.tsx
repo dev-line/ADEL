@@ -27,7 +27,7 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
     if (state == "Loading" || Cookies == "") {
       if (typeof window !== "undefined") {
         const OrdersStr = localStorage.getItem("ORDERS")
-        setOrders(JSON.parse(OrdersStr!));
+        setOrders(JSON.parse(OrdersStr!)||[]);
       }
       const res = GetOrders(Cookies)
       setCookies(EditOrders(Orders))
