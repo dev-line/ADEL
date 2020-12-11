@@ -1,6 +1,6 @@
 import { verify } from "jsonwebtoken";
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
-import { PrismaClient } from "../../prisma/Studio/-adel";
+import { PrismaClient } from "@prisma/client";
 const { SECRET } = process.env
 export const Auth = (event: NextApiHandler) => async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "GET") {
