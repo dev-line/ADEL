@@ -23,8 +23,9 @@ export default function Carte(props:any) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const OrdersStr = localStorage.getItem("ORDERS")
-      setOrders(JSON.parse(OrdersStr!));
-      if (OrdersStr!) {
+      const List = JSON.parse(OrdersStr!)||[]
+      setOrders(List);
+      if (List.length==0) {
         Router.push("/")
       }
     }
