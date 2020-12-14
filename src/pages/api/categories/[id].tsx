@@ -6,10 +6,10 @@ const prisma = new PrismaClient();
 export default Auth(async function getCategory(req: NextApiRequest, res: NextApiResponse){
   if (req.method == "GET") {
     try {
-     await prisma.categories.findUnique({include:{products:true},where:{id: Number(req.query.id)}}).then(data => {
-        res.status(200).json(data||{})
+     await prisma.categories.findUnique({where:{id: Number(req.query.id)}}).then(data => {
+        res.status(200).json(data)
       }).catch(err => {
-        res.status(400).json(err)
+        res.json({})
       })
     } catch (error) {
       res.status(400).json(error)
