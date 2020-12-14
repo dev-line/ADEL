@@ -9,7 +9,7 @@ const DASBOILERPLATE = (props: { children:any,title:string }) => {
     const href = "/dashboard/admin"
   useEffect(() => {
     var isAuth: Boolean = false
-    Axios.get('http://localhost:3000/api/auth').then(res => {
+    Axios.get('/api/auth').then(res => {
       isAuth = true
     }).catch(err => {
       Router.push('/dashboard/admin/login')
