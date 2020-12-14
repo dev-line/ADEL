@@ -25,6 +25,7 @@ const DASBOILERPLATE = (props: { children:any,title:string }) => {
     document!.getElementById("sidebar")!.style.width = "0";
   }
 async function Logout() {
+    console.log("LOgging Out");
  await Axios.post("/api/auth/logout").then(res=>{
      console.log(res);
     Router.push('/dashboard/admin/login')
@@ -160,9 +161,9 @@ async function Logout() {
                             <div className="card mb-3">
                                 <div className="card-header card-collapse">
                                     <div className="mb-0">
-                                        <a href="#Logout" className="btn btn-block text-muted-f text-right d-flex justify-content-between card-btn p-3" onClick={()=>{Logout()}}>
+                                        <button className="btn btn-block text-muted-f text-right d-flex justify-content-between card-btn p-3" onClick={()=>{Logout()}}>
                                             <span><i className="far fa-sign-out pl-2"></i>تسجيل الخروج</span>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>                            
