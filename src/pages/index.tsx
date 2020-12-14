@@ -74,8 +74,6 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
         var index = Math.floor(Math.random()*products.length)
         List.push(products[index])
       }
-    }else{
-      List = [...products]
     }
     return List.map((res,key)=>{
      if (key<4) {
@@ -193,7 +191,7 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
         </div>
       </div>
 
-    {products.length>0?(
+    {products.length>=10?(
             <div className="spacer-30 spacer-lg-80" id="stb">
             <div className="container">
               <div className="text-center">
