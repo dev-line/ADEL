@@ -32,7 +32,7 @@ export default async function GetUser(req: NextApiRequest, res: NextApiResponse)
             await prisma.users.update({where:{id:req.body.id},data:{email:req.body.email,name:req.body.name,username:req.body.username}}).then(user=>{
               res.status(200).json(user)
             }).catch(err=>{
-              res.status(500).json(err)
+              res.status(500)
             })
           }
         }else{

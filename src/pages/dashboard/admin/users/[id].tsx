@@ -21,7 +21,6 @@ export default function editProfile(props:{User:UserSchema}) {
       email: Email.current?.value!,
       name: Name.current?.value!,
       username: UserName.current?.value!,
-      OldPass: "test"
     }
     Loading()
     await Axios.put(`/api/auth/profile`,Data).then(res=>{
