@@ -14,9 +14,9 @@ export default async function GetUser(req: NextApiRequest, res: NextApiResponse)
   }
   else if(req.method == "PUT"){
     await prisma.users.findUnique({where:{id:req.body.id}}).then(user=>{
+      if (req.body.password) {
       compare(req.body.OldPass,user?.password!,async(err,isTrue)=>{
         if (!err&&isTrue) {
-          if (req.body.password) {
             hash(req.body.password, 10, async(err,Password)=>{
               if (!err) {
             await prisma.users.update({where:{id:req.body.id},data:{email:req.body.email,name:req.body.name,username:req.body.username,password:Password}}).then(user=>{
@@ -28,17 +28,17 @@ export default async function GetUser(req: NextApiRequest, res: NextApiResponse)
             res.status(402)
           }
         })
-          }else{
-            await prisma.users.update({where:{id:req.body.id},data:{email:req.body.email,name:req.body.name,username:req.body.username}}).then(user=>{
-              res.status(200).json(user)
-            }).catch(err=>{
-              res.status(500)
-            })
-          }
         }else{
           res.status(403)
         }
       })
+    }else{
+      prisma.users.update({where:{id:req.body.id},data:{email:req.body.email,name:req.body.name,username:req.body.username}}).then(user=>{
+        res.status(200).json(user)
+      }).catch(err=>{
+        res.status(500)
+      })
+    }
     }).catch(err=>{
       res.status(400).json(err)
     })
