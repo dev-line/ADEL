@@ -5,7 +5,7 @@ import { Auth } from '../../../services/Auth';
 const prisma = new PrismaClient();
 export default Auth(async function getAllCategories(req: NextApiRequest, res: NextApiResponse) {
   if (req.method == "GET") {
-    await prisma.categories.findMany({include:{products:true}}).then(data => {
+    await prisma.categories.findMany().then(data => {
       res.json(data||[])
     }).catch(err => {
       res.json(err)
