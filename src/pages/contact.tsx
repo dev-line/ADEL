@@ -42,7 +42,7 @@ export default function Contact(props:{data:InfoSchema,title:string}) {
     <BOILERPLATE {...{Orders:Orders}}>
       <NextSeo
       title={`${title} | تواصل معنا`}
-      description="A short description goes here."
+      description="تقدم لكم ورشتنا نسخة عن أحدث موديلات الذهب بمعدن الفضة و البلاكيور بمختلف الانواع و الأشكال"
     />
       {/* <Head>
   <title>{process.env.WEBSITENAME}</title>
