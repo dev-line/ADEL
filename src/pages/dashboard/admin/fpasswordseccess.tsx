@@ -43,7 +43,8 @@ export default function forgotPassword(props:{isAuth:boolean}) {
 
 export async function getServerSideProps(context:NextPageContext) {
   var isAuth:Boolean=false
-  await Axios.get('http://localhost:3000/api/auth').then(res=>{
+  const {HOST} = process.env
+  await Axios.get(`${HOST}/api/auth`).then(res=>{
     isAuth = true
   }).catch(err=>{
     console.log(err);

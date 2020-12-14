@@ -291,6 +291,7 @@ export default function newPost(props: {
 }
 
 export async function getServerSideProps(context: NextPageContext) {
+  const {HOST} = process.env
   var Categs: CategSchema[] = [];
   var Product: ProductSchema = {
     id: 0,
@@ -298,7 +299,7 @@ export async function getServerSideProps(context: NextPageContext) {
     price_silver: 0,
     price_blacquer: 0,
   };
-  await Axios.get(`http://localhost:3000/api/products/${context.query.id}`)
+  await Axios.get(`${HOST}/api/products/${context.query.id}`)
     .then((res) => {
       Product = res.data;
     })
@@ -306,7 +307,7 @@ export async function getServerSideProps(context: NextPageContext) {
       console.log(err);
     })
     .finally(async () => {
-      await Axios.get("http://localhost:3000/api/categories")
+      await Axios.get(`${HOST}/api/categories`)
         .then((res) => {
           Categs = res.data || [];
         })

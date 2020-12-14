@@ -174,7 +174,7 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
     <BOILERPLATE {...{Orders:Orders,RemoveOrder: RemoveOrder, SelectProduct: SelectProduct}}>
       <NextSeo
       title={`${title} | الرئيسية`}
-      description="A short description goes here."
+      description="تقدم لكم ورشتنا نسخة عن أحدث موديلات الذهب بمعدن الفضة و البلاكيور بمختلف الانواع و الأشكال"
     />
       <div className="bg-content d-block">
         <div
@@ -182,13 +182,12 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
           style={{ background: "url('/assets/img/bg/bg-hero.jpg')" }}
         >
           <div className="container text-right z-index-4">
-            <h1 className="text-white mb-lg-5">Summer Collection</h1>
+            <h1 className="text-white mb-lg-5">مجوهرات تاج العروس</h1>
             <p className="text-white opacity-80 mb-lg-8 w-lg-35">
-              So called give, one whales tree seas dry place own day, winged
-              tree created spirit.
+              تقدم لكم ورشتنا نسخة عن أحدث موديلات الذهب بمعدن الفضة و البلاكيور بمختلف الانواع و الأشكال
             </p>
             <a className="btn btn-dark" href="#stb">
-              Shop Now<i className="fal fa-long-arrow-left mr-2"></i>{" "}
+            تصفح المنتجات<i className="fal fa-long-arrow-left mr-2"></i>{" "}
             </a>
           </div>
         </div>

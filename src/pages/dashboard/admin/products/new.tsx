@@ -203,8 +203,9 @@ useEffect(() => {
 }
 
 export async function getServerSideProps(context: NextPageContext) {
+  const {HOST} = process.env
   var Categories: CategSchema[] = []
-  await Axios.get("http://localhost:3000/api/categories").then(res => {
+  await Axios.get(`${HOST}/api/categories`).then(res => {
     Categories = res.data || []
   }).catch(err => {
     Categories = []

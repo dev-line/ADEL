@@ -248,7 +248,8 @@ export default function orders(props:{data:OrdersSchema[]}) {
 
 export const getServerSideProps = async (ctx:NextPageContext) => {
   var OrdersList:OrdersSchema[] = []
-  await Axios.get("http://localhost:3000/api/orders").then(res=>{
+  const {HOST} = process.env
+  await Axios.get(`${HOST}/api/orders`).then(res=>{
     OrdersList = res.data
   }).catch(err=>{
     console.log(err);

@@ -131,7 +131,8 @@ export default function categories(props:{ Categories:CategSchema[] }) {
 
 export async function getServerSideProps(ctx:NextApiHandler) {
   var Categories:CategSchema[] = [];
-  await Axios.get(`http://localhost:3000/api/categories`)
+  const {HOST} = process.env
+  await Axios.get(`${HOST}/api/categories`)
     .then((res) => {
       Categories = res.data;
     })

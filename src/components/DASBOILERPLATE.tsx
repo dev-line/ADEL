@@ -4,12 +4,13 @@ import { NextPageContext } from 'next'
 import Axios from 'axios'
 import Router from 'next/router'
 import Link from 'next/link'
+
 const DASBOILERPLATE = (props: { children:any,title:string }) => {
     const {children,title}=props
     const href = "/dashboard/admin"
   useEffect(() => {
     var isAuth: Boolean = false
-    Axios.get('http://localhost:3000/api/auth').then(res => {
+    Axios.get('/api/auth').then(res => {
       isAuth = true
     }).catch(err => {
       Router.push('/dashboard/admin/login')

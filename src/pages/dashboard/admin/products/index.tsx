@@ -54,8 +54,9 @@ export default function posts(props:{Products:ProductSchema[]}) {
 }
 
 export async function getServerSideProps(context:NextPageContext) {
+  const {HOST} = process.env
   var Products:ProductSchema[] = []
-  await Axios.get("http://localhost:3000/api/products").then(res=>{
+  await Axios.get(`${HOST}/api/products`).then(res=>{
     Products = res.data
   }).catch(err=>{
     console.log(err);

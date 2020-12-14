@@ -19,7 +19,7 @@ export default function About(props:{data:InfoSchema,title:string}) {
     <BOILERPLATE {...{Orders:Orders, Title:"من نحن"}}>
             <NextSeo
       title={`${props.title} | من نحن`}
-      description="A short description goes here."
+      description="تقدم لكم ورشتنا نسخة عن أحدث موديلات الذهب بمعدن الفضة و البلاكيور بمختلف الانواع و الأشكال"
     />
             <div className="vh-90 content-centered bg-cover position-relative" style={{background: "url('assets/img/bg/cover-01.jpg')"}}>
                 <div className="overlay-black"></div>

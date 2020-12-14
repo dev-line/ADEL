@@ -227,7 +227,8 @@ export default function editProfile(props:{User:UserSchema}) {
 
 export async function getServerSideProps(context: NextPageContext) {
   var User: any = {};
-  await Axios.post(`http://localhost:3000/api/auth/profile`, {
+  const {HOST} = process.env
+  await Axios.post(`${HOST}/api/auth/profile`, {
     id: Number(context.query.id),
   })
     .then((res) => {

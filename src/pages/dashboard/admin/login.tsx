@@ -15,7 +15,7 @@ export default function login(props:{isAuth:boolean}) {
   const [PassVis, setPassVis] = useState(false)
   useEffect(() => {
     var isAuth: Boolean = false
-    Axios.get('http://localhost:3000/api/auth').then(res => {
+    Axios.get('/api/auth').then(res => {
       Router.push('/dashboard/admin')
     }).catch(err => {
       isAuth = false

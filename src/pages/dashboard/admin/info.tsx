@@ -233,7 +233,8 @@ export default function info(props:{data:InfoSchema}) {
 }
 export const getServerSideProps = async (ctx:NextPageContext) => {
   var Infos:InfoSchema = {}
-  await Axios.get("http://localhost:3000/api/info").then(res=>{
+  const {HOST} = process.env
+  await Axios.get(`${HOST}/api/info`).then(res=>{
     Infos = res.data
   }).catch(err=>{
     console.log(err);
