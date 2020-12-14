@@ -1,5 +1,6 @@
 import React from 'react'
 import { ProductSchema } from '../services/data.spec'
+import Link from "next/link"
 
 export default function DraftList(props:{product: ProductSchema, Restore:any}) {
   const {product, Restore} = props
@@ -13,9 +14,11 @@ export default function DraftList(props:{product: ProductSchema, Restore:any}) {
             <p className="font-size-1 font-weight-semi-bold mb-0">{product.name}</p>
             <ul className="list-unstyled d-flex mb-0">
               <li className="mr-3">
-                <a href="./edit-product.html" target="_blank" className="btn text-primary-f p-0 smaller font-weight-bold">
+              <Link href={`/dashboard/admin/products/edit/${product.id}`}>
+               <a className="btn text-primary-f p-0 smaller font-weight-bold">
                   تعديل
                                                     </a>
+               </Link>
               </li>
               <li className="mr-3">
                 <button type="button" className="btn text-secondary-f p-0 smaller font-weight-bold" data-toggle="modal" data-target={`#restorePost${product.id}`}>

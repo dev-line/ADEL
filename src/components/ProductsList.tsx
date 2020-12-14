@@ -1,5 +1,6 @@
 import React from 'react'
 import { ProductSchema } from '../services/data.spec'
+import Link from "next/link"
 
 export default function ProductsList(props:{product:ProductSchema, Delete:any}) {
   const {product, Delete} = props
@@ -13,14 +14,11 @@ export default function ProductsList(props:{product:ProductSchema, Delete:any}) 
             <p className="font-size-1 font-weight-semi-bold mb-0">{product.name}</p>
             <ul className="list-unstyled d-flex mb-0">
               <li>
-                <a href="./edit-product.html" target="_blank" className="btn text-primary-f p-0 smaller font-weight-bold">
+               <Link href={`/dashboard/admin/products/edit/${product.id}`}>
+               <a className="btn text-primary-f p-0 smaller font-weight-bold">
                   تعديل
                                                     </a>
-              </li>
-              <li className="mx-3">
-                <a href="#Product-Link" target="_blank" className="btn text-primary-f p-0 smaller font-weight-bold">
-                  عرض
-                                                    </a>
+               </Link>
               </li>
 
               <li>
