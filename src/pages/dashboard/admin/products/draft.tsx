@@ -70,7 +70,6 @@ export async function getServerSideProps(context:NextPageContext) {
   const {HOST} = process.env
   var Products:ProductSchema[] = []
   await Axios.get(`${HOST}/api/products/trash`).then(res=>{
-    console.log(res.data);
     Products = res.data
   }).catch(err=>{
     console.log(err);

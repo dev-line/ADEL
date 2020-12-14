@@ -12,6 +12,8 @@ export default function orders(props:{data:OrdersSchema[]}) {
   const [SelectedOrder, setSelectedOrder] = useState<OrdersSchema>()
   const [SelectedOrderList, setSelectedOrderList] = useState<ProductSchema[]>([])
   const [Total, setTotal] = useState(0)
+  const createdAt = new Date(SelectedOrder?.createdAt!)
+
   const SelectOrder = (Order:OrdersSchema,total:number)=>{
     setSelectedOrder(Order)
     setTotal(total)
@@ -196,7 +198,7 @@ export default function orders(props:{data:OrdersSchema[]}) {
                   <p className="font-weight-semi-bold text-dark mb-1">
                     تاريخ الطلب:
                   </p>
-                  <span className="small text-dark">{SelectedOrder?.createdAt}</span>
+                  <span className="small text-dark">{`${createdAt.getFullYear()}/${createdAt.getMonth()+1}/${createdAt.getDate()}`}</span>
                 </div>
 
                 <div className="col-md-4 mb-3 mb-md-0">

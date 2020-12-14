@@ -26,7 +26,10 @@ const DASBOILERPLATE = (props: { children:any,title:string }) => {
   }
 async function Logout() {
  await Axios.post("/api/auth/logout").then(res=>{
+     console.log(res);
     Router.push('/dashboard/admin/login')
+ }).catch(err=>{
+     console.log(err);
  })   
 }
   return (
@@ -107,7 +110,7 @@ async function Logout() {
                                                 </Link>
                                             </li>
                                             <li className="list-group-item">
-                                            <Link href={`${href}/products/categories`}>
+                                            <Link href={`${href}/products/draft`}>
                                                 <a className="stretched-link text-reset">المهملاتٍ</a>
                                                 </Link>
                                             </li>

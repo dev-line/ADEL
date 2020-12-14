@@ -6,7 +6,7 @@ import { OrdersSchema, ProductSchema } from '../services/data.spec'
 function OrdersList(props:{data:OrdersSchema,Select:Function,Remove:Function}) {    
   const {data,Remove}=props
   const {Products} = data
-
+const createdAt = new Date(data?.createdAt!)
 
   const CalcTotal = ()=>{
     const List:ProductSchema[] = JSON.parse(Products!) || []
@@ -76,7 +76,7 @@ function OrdersList(props:{data:OrdersSchema,Select:Function,Remove:Function}) {
         </td>
         <td>
           <p className="font-size-1 font-weight-semi-bold mb-0">
-            {data.createdAt}
+          {`${createdAt.getFullYear()}/${createdAt.getMonth()+1}/${createdAt.getDate()}`}
           </p>
         </td>
         {/* <!-- Delete Post --> */}

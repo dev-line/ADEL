@@ -215,7 +215,7 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
                   <div className="card-header bg-transparent border-0 w-100">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h3 className="mb-0">Necklaces</h3>
+                        <h3 className="mb-0">قائمة المنتجات</h3>
                       </div>
                       <div className="my-auto">
                         <button

@@ -4,6 +4,7 @@ import Link from "next/link"
 
 export default function ProductsList(props:{product:ProductSchema, Delete:any}) {
   const {product, Delete} = props
+  const createdAt = new Date(product?.createdAt!)
   return (
     <tr>
       <td className="text-lh-md">
@@ -36,7 +37,7 @@ export default function ProductsList(props:{product:ProductSchema, Delete:any}) 
       <td><p className="font-size-1 font-weight-semi-bold mb-0 currency-sm">{product.price_silver}</p></td>
       <td><p className="font-size-1 font-weight-semi-bold mb-0 currency-sm">{product.price_blacquer}</p></td>
   <td><p className="font-size-1 font-weight-semi-bold mb-0">{product.categories![0].name}</p></td>
-      <td><p className="font-size-1 font-weight-semi-bold mb-0">12/05/2021</p></td>
+      <td><p className="font-size-1 font-weight-semi-bold mb-0">{`${createdAt.getFullYear()}/${createdAt.getMonth()+1}/${createdAt.getDate()}`}</p></td>
       {/* <!-- Delete Post --> */}
       <div className="modal fade" id={`delPost${product.id}`} tabIndex={-1} role="dialog" aria-labelledby="delPost" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
