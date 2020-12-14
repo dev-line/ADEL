@@ -2,7 +2,7 @@ import Swal from "sweetalert2"
 
 export function Loading() {
     Swal.fire({
-        title: `جاري التحميل`,
+        title: `الرجاء الانتظار ...`,
         timerProgressBar: true,
         showConfirmButton: false,
         willOpen: () => {
