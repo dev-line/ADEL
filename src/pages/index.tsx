@@ -174,7 +174,7 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
     <BOILERPLATE {...{Orders:Orders,RemoveOrder: RemoveOrder, SelectProduct: SelectProduct}}>
       <NextSeo
       title={`${title} | الرئيسية`}
-      description="A short description goes here."
+      description="تقدم لكم ورشتنا نسخة عن أحدث موديلات الذهب بمعدن الفضة و البلاكيور بمختلف الانواع و الأشكال"
     />
           <div className="bg-content d-block">
         <div
@@ -184,7 +184,7 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
           <div className="container text-right z-index-4">
             <h1 className="text-white mb-lg-5">مجوهرات تاج العروس</h1>
             <p className="text-white opacity-80 mb-lg-8 w-lg-35">
-              تقدم لكم ورشتنا أحدث موديلات الفضة و البلاكيور بمختلف الانواع و الأشكال
+             .تقدم لكم ورشتنا نسخة عن أحدث موديلات الذهب بمعدن الفضة و البلاكيور بمختلف الانواع و الأشكال
             </p>
             <a className="btn btn-dark" href="#stb">
             تصفح المنتجات<i className="fal fa-long-arrow-left mr-2"></i>{" "}
