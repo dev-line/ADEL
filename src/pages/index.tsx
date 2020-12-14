@@ -176,12 +176,12 @@ export default function Home(props: { products: ProductSchema[],title:string }) 
       title={`${title} | الرئيسية`}
       description="A short description goes here."
     />
-      <div className="bg-content d-block">
+          <div className="bg-content d-block">
         <div
           className="vh-100 d-flex align-items-center bg-cover overlay position-relative"
           style={{ background: "url('/assets/img/bg/bg-hero.jpg')" }}
         >
-          < <div className="container text-right z-index-4">
+          <div className="container text-right z-index-4">
             <h1 className="text-white mb-lg-5">مجوهرات تاج العروس</h1>
             <p className="text-white opacity-80 mb-lg-8 w-lg-35">
               تقدم لكم ورشتنا أحدث موديلات الفضة و البلاكيور بمختلف الانواع و الأشكال
