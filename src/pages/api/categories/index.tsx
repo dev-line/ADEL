@@ -6,9 +6,9 @@ const prisma = new PrismaClient();
 export default Auth(async function getAllCategories(req: NextApiRequest, res: NextApiResponse) {
   if (req.method == "GET") {
     await prisma.categories.findMany().then(data => {
-      res.json(data||[])
+      res.json(data)
     }).catch(err => {
-      res.json(err)
+      res.json([])
     })
   } else if (req.method == "POST") {
     await prisma.categories.create({ data: {
